@@ -7,10 +7,9 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain.agents import create_agent
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from datetime import datetime
+from config import MAX_HISTORY
 
-load_dotenv()
-
-MAX_HISTORY = 5  # number of past conversations to remember
+load_dotenv() 
 
 async def main():
     today = datetime.now().strftime("%Y-%m-%d")

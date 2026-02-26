@@ -5,9 +5,6 @@ import os
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(BASE, "database", "db.sqlite")
 
-# DB_PATH = r"C:\Users\Gugan\Desktop\AI-Training-Assignment\data_pipeline_agent\database\db.sqlite"
-
-
 mcp = FastMCP("Schema MCP")
 
 @mcp.tool()

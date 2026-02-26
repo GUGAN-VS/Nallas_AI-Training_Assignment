@@ -6,8 +6,6 @@ import os
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_PATH = os.path.join(BASE, "database", "db.sqlite")
 
-# DB_PATH = r"C:\Users\Gugan\Desktop\AI-Training-Assignment\data_pipeline_agent\database\db.sqlite"
-
 
 DEFAULT_JOBS = [
     "daily_sales_etl",
@@ -52,8 +50,6 @@ def run_pipeline():
         failed_today = [row[0] for row in cursor.fetchall()]
 
         # Step 4: Determine which jobs to run
-        # - Jobs that failed today → re-run (update)
-        # - Jobs not yet run today → run fresh (insert)
         jobs_to_run = failed_today + [j for j in DEFAULT_JOBS if j not in existing_today]
 
         if not jobs_to_run:

@@ -24,3 +24,5 @@ MODEL="moonshotai/kimi-k2-instruct"
 TEMPERATURE=0
 MAX_TOKENS=1024
 
+MAX_HISTORY = 5 
+
